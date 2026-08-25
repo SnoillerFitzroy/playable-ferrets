@@ -2,8 +2,8 @@
 	<Info CreatedBy="Snöiller Fitzroy" CreatedOn="6/6/2023 5:48:57 PM" Version="6" Fps="30"/>
 	<Content>
 		<Spritesheets>
-			<Spritesheet Path="costumes\phantasm_base.png" Id="0"/>
-			<Spritesheet Path="costumes\halo_body.png" Id="1"/>
+			<Spritesheet Path="costumes\mustela_base.png" Id="0"/>
+			<Spritesheet Path="costumes\mustela_body.png" Id="1"/>
 		</Spritesheets>
 		<Layers>
 			<Layer Name="body0" Id="0" SpritesheetId="1"/>

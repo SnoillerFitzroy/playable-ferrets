@@ -1,13 +1,13 @@
 <AnimatedActor>
-	<Info CreatedBy="Snöiller Fitzroy" CreatedOn="6/6/2023 5:48:57 PM" Version="6" Fps="30"/>
+	<Info CreatedBy="Snöiller Fitzroy" CreatedOn="6/8/2023 1:32:10 AM" Version="5" Fps="30"/>
 	<Content>
 		<Spritesheets>
-			<Spritesheet Path="costumes\phantasm_base.png" Id="0"/>
-			<Spritesheet Path="costumes\halo_body.png" Id="1"/>
+			<Spritesheet Path="costumes\sockets_ears.png" Id="0"/>
+			<Spritesheet Path="costumes\sockets_body.png" Id="1"/>
 		</Spritesheets>
 		<Layers>
 			<Layer Name="body0" Id="0" SpritesheetId="1"/>
-			<Layer Name="head0" Id="1" SpritesheetId="0"/>
+			<Layer Name="head4" Id="1" SpritesheetId="0"/>
 		</Layers>
 		<Nulls/>
 		<Events/>
