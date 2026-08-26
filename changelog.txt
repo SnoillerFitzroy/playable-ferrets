@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 v1.1
 Mustela's stats have been changed:
 - Damage Multiplier reduced from 3 to 2 (final starting stat of 1.70, down from 2.55)
@@ -307,4 +308,315 @@ Other changes:
 
 Coming soon:
 - More lore items for all four characters
+=======
+v1.1
+Mustela's stats have been changed:
+- Damage Multiplier reduced from 3 to 2 (final starting stat of 1.70, down from 2.55)
+
+Both form's starting Trinkets modified:
+- Extra copies of Your Soul (Mustela) and Cracked Key (Tainted Mustela) have been removed.
+
+minor text fixes
+
+removed herobrine
+
+----------------------------------------------------------------
+v1.2
+Many dev files trimmed and/or removed, reducing the mod's filesize quite a bit.
+
+Both forms' starting items now begin fully uncharged instead of fully charged.
+
+Mustela's stats have been changed:
+- Tears reduced to 3.84
+- Mustela's Tears stat also grows or shrinks noticeably less extremely
+- Base Damage increased from 0.85 to 1.50
+- Damage Multiplier reduced from 2 to 1.28 (final starting stat of 1.92, up from 1.70)
+Notes: This is intended to greatly reduce his overall DPS to compensate for his petrification effect
+
+Tainted Mustela's stats have been changed:
+- Base Damage changed from 1.57 to 1.7
+- Damage Multiplier reduced from 2 to 1.5 (final starting stat of 2.55, down from 3.14)
+Notes: This is intended to reduce his overall DPS slightly to compensate for his tears-turn-90-degrees effect making him rarely miss
+- Range nerfed to intended stat value
+
+Mustela's Medicine nerfed significantly:
+- Now heals 3 hearts (down from full heal)
+- Now only adds 0.5 Soul Hearts (down from 2.5)
+- Now costs 2 hearts to take as a Devil Deal
+- Now costs 32 cents (up from 15) if found as a shop item (such as from Chaos) or playing either form of Keeper
+- Tears Down and Damage Up effects reduced slightly
+- Item Weight for spawning reduced greatly
+- Item weight decrement increased slightly (together this makes it show up significantly less often and fewer times in total)
+Mustela's Medicine pity buff:
+- Now adds 1 Heart Container
+Notes: This is and always was a Quality 3 item and is also partly a joke about American healthcare, it's not meant to be the most balanced thing and granting HP and a tears down is the most straightforward way to make a common antidepressant into a TBOI item.
+
+minor text fixes
+
+removed herobrine
+
+Coming soon:
+- More mustela-lore-related items.
+
+----------------------------------------------------------------
+v1.3
+Added a new item: Mustela's Tainted Sockets. (Quality: 2)
+Almost all characters get these effects:
+- 10% Tears Down
+- 15% Damage Up
+- 3 Range Up
+- Adds the Brain Worm Trinket's effects to your tears, making them turn 90 degrees to avoid missing an enemy.
+- Applies a costume of Tainted Mustela's eye sockets, blood tear stains, and blood-soaked body.
+Tainted Mustela gets different effects:
+- 8.5% Tears Down
+- 25% Damage Up
+- 1 Range Up
+- 2 Luck Up
+This item costs 3 hearts as a Devil Deal, and 13 cents if available for coins (keeper/tkeeper/chaos). It's found in the Devil, Greed Devil, Secret, Greed Secret, and ultra Secret Room Pools.
+
+Added a new item: A Carnivore's Meal. (Quality: 1)
+- HP Up (x1)
+- Heals two red hearts
+- this is just a generic "food HP up" that fits the theme of the mod
+This item costs 8 cents if found in a way that costs coins (keepers and chaos), only found in the Boss pool.
+
+Tainted Mustela now starts with 3 Broken Hearts (instead of two) as originally intended.
+
+minor text fixes
+
+removed herobrine
+
+Coming soon:
+- More mustela-lore-related items.
+- Custom controls image for the starting room of basement 1
+
+Coming "Eventually":
+- birthright fx
+
+----------------------------------------------------------------
+v1.3.1
+fixed a bug where the EID for A Carnivore's Meal wasn't loading.
+
+minor text fixes
+
+removed herobrine
+
+----------------------------------------------------------------
+v1.4.0 (The Birthright Update)
+Birthright effects for Mustela have been added:
+[i]Eternal lift and ferret instinct[/i]
+Mustela gains flight, a respectable Damage Up, and gains the skill of brutally destroying enemies from their weak points.
+
+Birthright effects for Tainted Mustela have been added:
+[i]A burning repopulation bomb[/i]
+Tainted Mustela's tears become special ferret fetus tears that burn enemies on contact. His broken hearts are cleared and he also gets his eyes back...sort of.
+
+Added a new item: Heart of the Mustelid.
+- ACTIVE ITEM: 3 Charges
+- Freezes all enemies in the room for ten seconds
+- Once unfrozen, all enemies in the room remain slowed for 5 seconds
+- 85% chance to spawn a Half Soul Heart
+- 14.9% chance to spawn a Black Heart
+- 0.1% chance to spawn an Eternal Heart
+- Has a synergy with Car Battery
+Heart of the Mustelid is found in the Secret, Greed Secret, Ultra Secret, and Treasure room pools, with a low weight.
+
+Added a new item: Extant Broken Heart
+- ACTIVE ITEM: 3 Charges
+- Sets all enemies in the room on fire, damaging them for 4 seconds
+- 33.4% chance to drop a Black Heart
+Extant Broken Heart is found in the Secret, Greed Secret, Ultra Secret, Devil, and Greed Devil room pools, with a low weight.
+
+Mustela's starting kit has been changed:
+Mustela now starts with Heart of the Mustelid as his pocket active, with his uncharged Satanic Bible being moved to his regular Active slot
+
+Tainted Mustela's starting kit has been changed:
+Tainted Mustela now starts with Extant Broken Heart as his pocket active, with his uncharged Converter being moved to his regular Active slot
+
+Tainted Mustela's stats have been changed:
+Tainted Mustela cannot have his Luck go below -2 (down from 0)
+Note that Tainted Mustela's starting Luck is still 0.
+
+Items from this mod have been tweaked:
+A Carnivore's Meal now counts as a Food item for the purposes of Binge Eater.
+
+Mod support has been changed and updated:
+Updated EID support to be cleaner, with simultaneously simpler and more accurate descriptions that don't instantly fill up the whole screen.
+Added compatibility for the POG mod
+
+Added over 40 new item costumes for both forms and streamlined costume compatibility for future expansion of costumes
+
+Cleaned out more dev files to reduce the mod's filesize
+
+Some bugs have been fixed:
+Fixed an issue where Tainted Mustela's flight costume was invisible
+Fixed a critical issue that prevented modded active items from working
+
+minor text fixes
+
+removed herobrine
+
+Coming soon:
+- More mustela-lore-related items.
+- Custom controls image for the starting room of basement 1
+- Even more costumes for vanilla items
+
+----------------------------------------------------------------
+v2 (The Dual Powers of Trauma Update)
+Mustela's stats have been changed:
+- Shot Speed Clamp adjusted to 0.7-3.00
+
+Tainted Mustela's stats have been changed:
+- Broken Hearts: 4
+- Tears: 2.00
+- Attack: 3.00
+- Shot Spped Multiplier: 1.5
+- Shot Speed Clamp adjusted to 0.4-2.56
+
+Mustela's startking kit has been changed:
+- Mustela no longer starts with the vanilla Satanic Bible
+- - This is because a weaker version of its effect has been implemented into his pocket active in this update.
+
+Mustela's pocket active has been changed:
+- Now called "Satan's Returned Love" with a new sprite
+- - This new sprite is meant to represent a visual combination of the old incarnation of the item with Satanic Bible, and represents Mustela's devotion to Satan.
+- Now a 4 room charge, up from 3
+- Status infliction standardized. No longer freezes (petrifies) enemies, and instead just chills them, slowing them for some time
+- Car Battery synergy temporarily removed due to a code issue
+- - Still boosted by Birthright if used by Mustela
+- If Mustela uses the item before clearing the floor's Boss, the Boss reward will be replaced with a Devil Deal.
+- Always grants half a Black Heart directly to the player instead of dropping random hearts on the floor.
+- Shows up in less item pools: Now only available in the Devil, Greed Devil, and Ultra Secret Room pools.
+
+Tainted Mustela's pocket active has been changed:
+- Now called "Mustela's Broken Heart" with a new sprite
+- - This new sprite is meant to more clearly represent the item's lore, referring to Tainted Mustela's emotional state after being forsaken by Satan and subsequently being subjected to indoctrination by Uriel and Gabriel.
+- Now a 4 room charge, up from 3
+- Deals damage differently
+- Car Battery synergy temporarily removed due to a code issue
+- - Still boosted by Birthright if used by Tainted Mustela
+- Now only gives a half soul heart, directly added to the player, instead of dropping random hearts on the floor. Health provided by this item is only given to Tainted Mustela. Other characters using this item do not get health anymore.
+- Shows up in less item pools: Now only available in the Secret, Greed Secret, and Ultra Secret Room pools.
+
+Mustela's Birthright has been replaced:
+- Mustela gains spectral tears.
+- Mustela gains a 100% devil chance.
+- Chill duration for Satan's Returned Love increases.
+
+Tainted Mustela's Birthright has been replaced:
+- Grants homing
+- Now makes Mustela's Broken Heart deal more damage.
+
+Added a new character: Sablez
+- A Sable ferret with fire powers, ready to crank up the temperature on your runs!
+- Speed: 1.13
+- Tears: 2.25
+- Attack: 1.5
+- Range: 7.00
+- Shot Speed: 1.33
+- - Shot Speed is clamped to 0.69-3.2
+- Luck: 0.00
+
+Sablez has a birthright already:
+[i]"Goddess of fire"[/i]
+- Grants immunity to fire and explosions
+- Makes her tears explosive
+
+Added base data for Tainted Sablez
+- She is selectable but not recommended at this time
+- Stats and details will be finalized in the next update
+
+None of this mod's items show up in Treasure Pool anymore
+
+other minor behind the scenes tweaks and fixes for balance between the characters
+
+minor text fixes
+
+removed herobrine
+
+Coming soon:
+- More mustela-lore-related items
+- Even more costumes for vanilla items
+- Lore items for Sablez and Tainted Sablez
+- Costumes for Sablez
+- Missing data for Tainted Sablez
+- Costumes for Tainted Sablez
+
+----------------------------------------------------------------
+v2.1 (The Void Dweller Update)
+
+Mustela's starting stat multipliers have been reduced further for Tears and Damage. the actual starting stats are unchanged from the last update.
+
+Mustela's Pocket active has been renamed again to "Satan's Reward" because I felt it wasn't clear enough that "love" meant "like how Catholics think they 'love' Jesus"
+
+Mustela's Pocket Active has been buffed:
+- Now does something special if any form of Satan is in the current room
+- The effect is stronger if Mustela uses the item while a Satan form is in the room.
+
+Tainted Mustela's starting stats have been changed:
+- now begins with 5 Broken Hearts and 1 Black Heart.
+- luck is floored at -2.56. down from -2
+
+Mustela's Birthright has been changed...again. (again):
+- No longer grants ANY copies of Your Soul.
+- Now removes the Petrification effect
+- Now adds a chance for tears to carry the TEAR_ICE flag
+- No longer buffs his Pocket Active
+
+Tainted Mustela's Birthright has been slightly adjusted:
+- Grants a second Crystal Key once again
+- No longer buffs his Pocket Active
+
+Sablez's Birthright has been fixed:
+- Now correctly grants guaranteed tear explosions
+
+Sablez's Pocket Active has been replaced:
+- Now has Voided Storage, a weaker Moving Box that only she can use.
+- Voided Storage also does a little bit of damage to all enemies in the room on use.
+
+Added a new character: Tainted Sablez
+- Speed: 0.80
+- Tears: 3.00
+- Attack: 1.25
+- Range: 5.00
+- Shot Speed: 0.80
+- Luck: -5.00
+- There are 39 items she can't find in a run. Check the wiki for the full list.
+Birthright: [i]"Something wrong in you"[/i]
+- Grants space distortion fetus tears
+- Changes functionality of her pocket active
+
+Added a new Item: Cesarean Scalpel
+- Active item: 2.1333s cooldown
+- Hurts you with fake damage
+- Procs Ventricle Razor
+- Triggers a Hallucination
+- Works a bit differently for Tainted Sablez
+
+Added a new Item: Extinction Certificate
+- Granted to Mustela or Tainted Mustela in the Pocket Active slot upon picking up the opposite form's Pocket Active as an item spawn
+- Removes both of the original actives
+- If you have Schoolbag, the active item in the other schoolbag slot isn't touched, even if it's in the main slot
+- The replacement is triggered when you try to use one of the two items, cancelling their effects.
+
+Other changes:
+- Tainted Mustela no longer starts with Anemic
+- Tainted Mustela now constantly spawns red creep below himself
+- Sablez now constantly spawns black creep below herself
+- Finalized early implementation of "Wrong Item" scripts (Items that are unpreferred by this mod's characters) (these will be updated over time)
+- Added  base data for a few new items to be released later
+- Mustela's Medicine and Mustela's Tainted Sockets can now be summoned by Lemegeton
+
+- 16 more costumes and visual fixes for Mustela for vanilla items
+
+- Banned 60 items from being found by Mustela. Check the Wiki for the full list.
+- Banned 68 items from being found by Tainted Mustela. Check the Wiki for the full list.
+- Banned 24 items from being found by Sablez. Check the wiki for the full list.
+
+- minor text fixes
+- removed herobrine
+
+Coming soon:
+- More lore items for all four characters
+>>>>>>> origin
 - Yet more costumes for vanilla items for all four characters

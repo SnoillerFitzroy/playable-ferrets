@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 <challenges version="1">
     <challenge name="Curse of the Ferret?" minshotspeed="true" playertype="Mustela" roomfilter="6,10,13,21" cursefilter="109" endstage="12" megasatan="true" startingitems="458" startingtrinkets="189,170" startingpill="43" />
+=======
+<challenges version="1">
+    <challenge name="Curse of the Ferret?" minshotspeed="true" playertype="Mustela" roomfilter="6,10,13,21" cursefilter="109" endstage="12" megasatan="true" startingitems="458" startingtrinkets="189,170" startingpill="43" />
+>>>>>>> origin
 </challenges>

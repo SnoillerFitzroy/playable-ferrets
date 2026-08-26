@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <items>
     <!-- Birthright Update or older -->
 	<item id="0" quality="3" tags="offensive devil" />
@@ -23,4 +24,31 @@
 	<item id="995" quality="2" tags="offensive" />
 	<item id="996" quality="2" tags="offensive" />
 	<item id="997" quality="2" tags="offensive" />
+=======
+<items>
+    <!-- Birthright Update or older -->
+	<item id="0" quality="3" tags="offensive devil" />
+	<item id="1" quality="3" tags="offensive" />
+	<item id="2" quality="3" tags="summonable syringe offensive"/>
+	<item id="3" quality="2" tags="summonable angel offensive"/>
+	<item id="4" quality="1" tags="nolostbr nocantrip food"/>
+	
+	<!-- Update From the Void -->
+	<item id="5" quality="4" tags="nocantrip noeden nokeeper nogreed devil angel" />
+	<item id="6" quality="3" tags="nocantrip noeden nokeeper nogreed nolostbr" />
+	<item id="7" quality="3" tags="nocantrip noeden nokeeper nogreed nolostbr" />
+	<item id="8" quality="4" tags="syringe nocantrip noeden nokeeper nogreed" />
+	
+	<!-- A Wintasm Holiday, Part 1 -->
+	<item id="9" quality="2" tags="nolostbr angel offensive" />
+	
+	<!-- A Wintasm Holiday, Part 2 -->
+	<item id="10" quality="4" tags="offensive" />
+	<item id="11" quality="2" tags="nocantrip nolostbr offensive" />
+	
+	<!-- Hidden -->
+	<item id="995" quality="2" tags="offensive" />
+	<item id="996" quality="2" tags="offensive" />
+	<item id="997" quality="2" tags="offensive" />
+>>>>>>> origin
 </items>
