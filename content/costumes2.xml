@@ -1,0 +1,26 @@
+<costumes anm2root="gfx/characters/">
+  <costume anm2path="ferret_facial.anm2" id="1300" type="none" priority="99999"/>
+  <costume anm2path="MustelaFlight.anm2" type="none" priority="99999" isFlying="true"/>
+  <costume anm2path="gfx_socket.anm2" id="1301" type="none" priority="99999"/>
+  <costume anm2path="taintedFlight.anm2" type="none" priority="99999" isFlying="true"/>
+  <costume anm2path="ferret_fire.anm2" id="1302" type="none" priority="99999"/>
+  <costume anm2path="sableglasses.anm2" id="1303" type="none" priority="99999"/>
+  <costume anm2path="fire_flight.anm2" type="none" priority="99999" isFlying="true"/>
+  <costume anm2path="void_ears.anm2" id="1304" type="none" priority="99999"/>
+  <costume anm2path="voidglasses.anm2" id="1305" type="none" priority="99999"/>
+  <costume anm2path="void_body.anm2" id="1306" type="none" priority="99999"/> 
+  <costume anm2path="void_flight.anm2" type="none" priority="99999" isFlying="true"/>
+  <costume anm2path="halo.anm2" id="1307" type="none" priority="99999"/>
+  <costume anm2path="halo_flight.anm2" type="none" priority="99999"/>
+  <costume anm2path="youarenolongerdepressed.anm2" id="1308" type="passive" priority="128"/>
+  <costume anm2path="tainted_eyes.anm2" id="1309" type="passive" priority="128"/>
+  <costume anm2path="icepog.anm2" type="none" priority="999"/>
+  <costume anm2path="socketpog.anm2" type="none" priority="999"/>
+  <costume anm2path="firepog.anm2" type="none" priority="999"/>
+  <costume anm2path="voidpog.anm2" type="none" priority="999"/>
+  <costume anm2path="mask_comedy.anm2" id="1310" type="passive" priority="999"/>
+  <costume anm2path="mask_tragedy.anm2" id="1311" type="passive" priority="999"/>
+  <costume anm2path="mask_oger.anm2" id="1312" type="passive" priority="999"/>
+</costumes>
+
+<!-- see (https://wofsauge.github.io/IsaacDocs/rep/xml/costumes2.html) for more info on the tags :) !-->

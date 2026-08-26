@@ -1,0 +1,14 @@
+<achievements gfxroot="gfx/ui/achievement/">
+    <achievement id="1" name="Mustela Pocket Active"
+    text="Mustela's Favorite Book has appeared in the basement" gfx="mustela_achievement_srl.png" hidden="false"/>
+    <achievement id="2" name="Tainted Mustela Pocket Active"
+    text="Mustela's Broken Heart has appeared in the basement" gfx="mustela_achievement_mbh.png" hidden="false"/>
+    <achievement id="3" name="Prozac (Fluoxetine)"
+    text="Mustela's Medicine has appeared in the basement" gfx="mustela_achievement_prozac.png" hidden="false"/>
+    <achievement id="4" name="Sockets"
+    text="Mustela's Tainted Sockets have appeared in the basement" gfx="mustela_achievement_sockets.png" hidden="false"/>
+    <achievement id="5" name="Tainted Mustela" 
+    text="You unlocked 'The Extant'" gfx="mustela_achievement_extant_ferret.png" hidden="false"/>
+    <achievement id="6" name="Tainted Sablez" 
+    text="You unlocked 'The Void Dweller'" gfx="mustela_achievement_voided_ferret.png" hidden="false"/>
+</achievements>

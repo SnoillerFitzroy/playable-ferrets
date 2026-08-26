@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<metadata>
+  <name>[REP] Mustela and Sablez (The Wintasm Update)</name>
+  <directory>!!!mustela</directory>
+  <id>2987125567</id>
+  <description>
+    [h1]This mod [b]requires REPENTOGON[/b] to work![/h1]
+
+All other listed dependencies are [i]recommendations[/i] that are not required for the mod to function, but make the mod more fun.
+
+[hr][/hr]
+
+[h1]Ferrets in Isaac![/h1]
+Mustela, Sablez, and Wintasm are three new ferret-based characters who have a different play style than most vanilla characters.
+
+Mustela has a high Tears stat and increased movement speed, with a freeze effect that helps him pin enemies in place for a moment with his low damage. He handles small clusters of enemies better than individual ones, even if it takes a while. His pocket active, &quot; Satan's Reward, &quot; acts similar to the Satanic Bible, and chills enemies in the current room, slowing their movement speed for a moment. Useful for scouting large rooms to find a good angle to attack from!
+
+Sablez has mostly middling stats but inflicts a burn on enemies she hits, allowing for hit-and-run crowd control strategies. She can also occasionally break rocks and walls by just crying at them, enabling emergency escapes when things get hairy. Her pocket Voided Storage lets her take things with her, great for making sure you [i]don't forget[/i] anything!
+
+Wintasm has slightly lower than average stats, but has the impact powers to make up for it. His tears are made of powder snow, usually breaking on impact, and sometimes even smiting enemies with a holy power. His pocket active, Hibernation, lets him avoid sticky situations by simply Dying About It!
+
+Tainted Mustela has overall worse stats than Mustela, but his tears can change direction automatically to reduce his odds of missing a shot. His pocket active, &quot; Mustela's Broken Heart, &quot; lets him use his pent up rage to unleash mass harm on a single room, while also occasionally removing one of his Broken Hearts, which he starts with 6 of.
+
+Tainted Sablez has overall quite low stats, but her pocket Cesarean Scalpel lets her cheese Cursed Rooms and strong attacks from Champions, while enabling her to move around much more efficiently in spite of her speed. Don't let the Hallucinations confuse you!
+
+[hr][/hr]
+
+This mod has a wiki! It contains more detailed information about the mod's content, as well as lore for the four characters. You can read it here: 
+https://mustela-lore.fandom.com/wiki/Mustela_Wiki
+
+[hr][/hr]
+
+[h1]Credits[/h1]
+Catinsurance: Up-to-date tutorials on YouTube that made developing this significantly easier to start with fewer issues.
+Official TBoI Discord: Lots of advice on really specific things, too many people to list.
+  </description>
+  <version>2.2.1</version>
+  <visibility>Public</visibility>
+  <tag id="Lua" />
+  <tag id="Items" />
+  <tag id="Active Items" />
+  <tag id="Player Characters" />
+</metadata>
