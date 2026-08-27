@@ -1,8 +1,3 @@
-<<<<<<< HEAD
 <pocketitems>
 	<rune type="rune" id="13" description="Some say the world will end in fire; Some say in ice." hud="MustelaSoul" name="Soul of Mustela" mimiccharge="8" greedmode="false" />
-=======
-<pocketitems>
-	<rune type="rune" id="13" description="Some say the world will end in fire; Some say in ice." hud="MustelaSoul" name="Soul of Mustela" mimiccharge="8" greedmode="false" />
->>>>>>> origin
 </pocketitems>

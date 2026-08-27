@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 <items gfxroot="gfx/items/" version="1">
 	<!-- Birthright Update or older -->
-	<active id="0" name="Satan's Reward" description="A chilling gift from The Lord" gfx="satans_reward.png" devilprice="2" shopprice="20" maxcharges="4"chargetype="normal" cache="all" />
-	<active id="1" name="Mustela's Broken Heart" description="Burning rage" gfx="mustelas_broken_heart.png" devilprice="2" shopprice="20" maxcharges="4"chargetype="normal" cache="all" />
+	<active id="0" name="Satan's Reward" description="A chilling gift from The Lord" gfx="satans_reward.png" devilprice="2" shopprice="20" maxcharges="4" chargetype="normal" cache="all" />
+	<active id="1" name="Mustela's Broken Heart" description="Burning rage" gfx="mustelas_broken_heart.png" devilprice="2" shopprice="20" maxcharges="4" chargetype="normal" cache="all" />
 	
 	<passive id="2" cache="firedelay damage" name="Mustela's Medicine" description="The finding of Prozac!" gfx="prozac.png" devilprice="2" shopprice="32" hearts="6" maxhearts="2" soulhearts="1" />
 	<passive id="3" cache="all" name="Mustela's Tainted Sockets" description="I think I've seen enough." gfx="mustelas_tainted_sockets.png" devilprice="3" shopprice="13" />
@@ -28,35 +27,4 @@
 	
 	<!-- Trinkets?!?-->
 	<trinket name="Cat Paw Replica" description="A memorial that moves onward" cache="all" gfx="cat_paw_replica.png" />
-=======
-<items gfxroot="gfx/items/" version="1">
-	<!-- Birthright Update or older -->
-	<active id="0" name="Satan's Reward" description="A chilling gift from The Lord" gfx="satans_reward.png" devilprice="2" shopprice="20" maxcharges="4"chargetype="normal" cache="all" />
-	<active id="1" name="Mustela's Broken Heart" description="Burning rage" gfx="mustelas_broken_heart.png" devilprice="2" shopprice="20" maxcharges="4"chargetype="normal" cache="all" />
-	
-	<passive id="2" cache="firedelay damage" name="Mustela's Medicine" description="The finding of Prozac!" gfx="prozac.png" devilprice="2" shopprice="32" hearts="6" maxhearts="2" soulhearts="1" />
-	<passive id="3" cache="all" name="Mustela's Tainted Sockets" description="I think I've seen enough." gfx="mustelas_tainted_sockets.png" devilprice="3" shopprice="13" />
-	<passive id="4" name="A Carnivore's Meal" description="Bite the neck before it gets away!" gfx="mouse.png" maxhearts="2" hearts="4" shopprice="8" />
-    
-	<!-- Update From the Void -->
-	<active id="5" name="Extinction Certificate" description="Make things right, or shatter yourself" gfx="certificate.png" maxcharges="12" initcharge="0" />
-	<active id="6" name="Voided Storage" description="Void and unvoid" gfx="voided_storage_open.png" maxcharges="600" chargetype="timed" />
-	<active id="7" name="Voided Storage (full)" description="Void and unvoid" gfx="voided_storage_closed.png"/>
-	<active id="8" name="Cesarean Scalpel" description="No pain, no gain" gfx="cesarean_scalpel.png" maxcharges="240" chargetype="timed"  />
-
-	<!-- A Wintasm Holiday, Part 1 -->
-	<active id="9" name="Hibernation" description="It's that time of year again" gfx="hibernation.png" cache="all" devilprice="2" shopprice="20" maxcharges="3" chargetype="normal" />
-
-	<!-- A Wintasm Holiday, Part 2 -->
-	<active id="10" name="Frantic Wormhole" description="What time is it?" gfx="wormhole.png" cache="all" devilprice="2" shopprice="20" maxcharges="6" chargetype="normal" />
-	<passive id="11" name="Mischievous Corpse" description="It's...weirdly clean?" cache="all" gfx="mischievous_corpse.png" devilprice="2" />
-    
-	<!-- Hidden -->
-	<passive id="995" name="Mask of Comedy" description="Not done yet" gfx="mask_c.png" flatdamage="5.55" hidden="true" />
-	<passive id="996" name="Mask of Tragedy" description="Not done yet" gfx="mask_t.png" tears="3.33" flattears="2.56" hidden="true" />
-	<passive id="997" name="Oger Mask" description="Not done yet" gfx="mask_o.png" hidden="true" />
-	
-	<!-- Trinkets?!?-->
-	<trinket name="Cat Paw Replica" description="A memorial that moves onward" cache="all" gfx="cat_paw_replica.png" />
->>>>>>> origin
 </items>
