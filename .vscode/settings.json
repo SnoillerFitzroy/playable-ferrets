@@ -1,5 +1,29 @@
 {
     "files.associations": {
         ".anm2": "xml"
-    }
+    },
+    "cSpell.words": [
+        "Algiz",
+        "Ansus",
+        "BATTERYCHARGE",
+        "Berkano",
+        "BIGCHEST",
+        "BLACKHOLE",
+        "BOMBCHEST",
+        "changefunc",
+        "Dagaz",
+        "deadseascrolls",
+        "directorykey",
+        "dont",
+        "dssmenu",
+        "dssmod",
+        "ETERNALCHEST",
+        "fert",
+        "firedelay",
+        "IDEMPTY",
+        "Keybind",
+        "mustela",
+        "mustelid",
+        "MUSTELIDMOD"
+    ]
 }

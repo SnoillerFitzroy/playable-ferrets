@@ -1,3 +1,4 @@
+---@diagnostic disable: cast-local-type, undefined-field
 return function(DSSModName, DSSCoreVersion, MenuProvider)
 
     local dssmod = RegisterMod(DSSModName, 1)
@@ -2552,7 +2553,7 @@ return function(DSSModName, DSSCoreVersion, MenuProvider)
             for _, entity in pairs(Isaac.GetRoomEntities()) do
                 if (entity:IsActiveEnemy() and not entity:HasEntityFlags(EntityFlag.FLAG_FRIENDLY) and not entity:GetData().DSSMenuSafe)
                 or entity.Type == EntityType.ENTITY_PROJECTILE and entity:ToProjectile().ProjectileFlags & ProjectileFlags.CANT_HIT_PLAYER == 0
-                or entity.Type == EntityType.ENTITY_BOMBDROP 
+                or entity.Type == EntityType.ENTITY_BOMBDROP
                 then
                     roomHasDanger = true
                     break

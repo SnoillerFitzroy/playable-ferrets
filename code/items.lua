@@ -9,7 +9,7 @@ function MUSTELIDMOD:itemUsed_SatanReward(item, flag, player) -- Satan's Reward
 	-- Only Mustela should get Deals from his book. Others using the book are punished for taking his property <3
 	MUSTELIDMOD:chillingBlast()
 	MUSTELIDMOD:checkForSatanForms()
-	if numS8nPresent > 0 then
+	if MUTELIDMOD_NUM_SATAN_PRESENT > 0 then
 		SFXManager():Play(SoundEffect.SOUND_SATAN_GROW, 3, 0, false, 1, 0)
 		player:TakeDamage(1, DamageFlag.DAMAGE_FAKE, EntityRef(player), 0)
 		player:UseActiveItem(CollectibleType.COLLECTIBLE_KAMIKAZE, false, false, true, false, -1)
@@ -213,11 +213,13 @@ function MUSTELIDMOD:catMemorialization(player, flag) -- Mischievous Corpse
 				local creep = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.PLAYER_CREEP_RED, 0, player.Position, Vector.Zero, player):ToEffect()
 				creep.SpriteScale = Vector(2, 2)
 				creep.Color = Color(0, 1, 1, 1.0, 0, 0.75, 1) -- Make it cyan
+---@diagnostic disable-next-line: need-check-nil
 				creep:Update()
 			else
 				local creep = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.PLAYER_CREEP_RED, 0, player.Position, Vector.Zero, player):ToEffect()
 				creep.SpriteScale = Vector(0.05, 0.05)
 				creep.Color = Color(0, 1, 1, 1.0, 0, 0.75, 1) 
+---@diagnostic disable-next-line: need-check-nil
 				creep:Update()
 			end
 		end
@@ -278,12 +280,12 @@ end
 MUSTELIDMOD:AddCallback(ModCallbacks.MC_USE_ITEM, MUSTELIDMOD.rollTimeTravel, MUSTELIDMOD_COLLECTIBLES.HOLE)
 
 function MUSTELIDMOD:checkForSatanForms() -- "If Satan is here" easter egg
-	s8n = Isaac.CountEntities(nil, 84, 0, 0)
-	s8n_foot = Isaac.CountEntities(nil, 84, 10, 0)
-	s8n_mega = Isaac.CountEntities(nil, 274, 0, 0)
-	s8n_skull = Isaac.CountEntities(nil, 275, 0, 0)
-	numS8nPresent = s8n + s8n_foot + s8n_mega + s8n_skull
-	return numS8nPresent
+	local s8n = Isaac.CountEntities(nil, 84, 0, 0)
+	local s8n_foot = Isaac.CountEntities(nil, 84, 10, 0)
+	local s8n_mega = Isaac.CountEntities(nil, 274, 0, 0)
+	local s8n_skull = Isaac.CountEntities(nil, 275, 0, 0)
+	MUTELIDMOD_NUM_SATAN_PRESENT = s8n + s8n_foot + s8n_mega + s8n_skull
+	return MUTELIDMOD_NUM_SATAN_PRESENT
 end
 
 function MUSTELIDMOD:chillingBlast() -- The chilling effect from Satan's Reward.

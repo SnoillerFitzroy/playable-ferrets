@@ -150,6 +150,7 @@ function MUSTELIDMOD:TearDrippingFerret(player)
         local creep = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.PLAYER_CREEP_RED, 0, player.Position, Vector.Zero, player):ToEffect()
         creep.SpriteScale = Vector(math.random()*1.2, math.random()*1.2)
 		creep.Color = Color(0.34, 0.6685, 0.78, 1.0, 0.34, 0.6685, 0.78)
+---@diagnostic disable-next-line: need-check-nil
         creep:Update() end
 end MUSTELIDMOD:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, MUSTELIDMOD.TearDrippingFerret)
 
@@ -303,6 +304,7 @@ function MUSTELIDMOD:BloodSoakedFerret(player)
 	if game:GetFrameCount() % 2 == 0 then
         local creep = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.PLAYER_CREEP_RED, 0, player.Position, Vector.Zero, player):ToEffect()
         creep.SpriteScale = Vector(1.2, 1.2)
+---@diagnostic disable-next-line: need-check-nil
         creep:Update() end
 end MUSTELIDMOD:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, MUSTELIDMOD.BloodSoakedFerret)
 
@@ -428,6 +430,7 @@ function MUSTELIDMOD:sootCoveredFerret(player)
         creep.SpriteScale = Vector(sootDropX, sootDropY)
 		-- Make it randomly black or gray, with varied brightness
         creep.Color = Color(ssColor*0.925, ssColor, ssColor, 1.0, ssColor*0.925, ssColor, ssColor)
+---@diagnostic disable-next-line: need-check-nil
         creep:Update() -- Update it to get rid of the initial red animation that lasts a single frame.
     end
 end
@@ -590,6 +593,7 @@ function MUSTELIDMOD:StaticDrippingFerret(player)
         local creep = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.PLAYER_CREEP_RED, 0, player.Position, Vector.Zero, player):ToEffect()
 		creep.SpriteScale = Vector(creepSizeX, creepSizeY)
 		creep.Color = Color(0,0,0,1,creepColor-0.025, creepColor-0.025, creepColor-0.025)
+---@diagnostic disable-next-line: need-check-nil
         creep:Update() -- Update it to get rid of the initial red animation that lasts a single frame.
     end
 end
