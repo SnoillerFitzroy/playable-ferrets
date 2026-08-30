@@ -75,35 +75,23 @@ function MUSTELIDMOD:cryMeABlizzard(tear, player, cacheFlag) -- Wintasm's tears!
 	local player = Isaac.GetPlayer()
 	if player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.HALO then -- If you're Wintasm
 		-- Luck Influence
-		local luckModifier = player.Luck * 0.25
+		local luckModifier = player.Luck * 35
 		-- Floor the luck modifier at 0 so negative luck doesn't punish Wintasm.
-		if luckModifier < 0 then
+		if player.Luck < 0 then
 			luckModifier = 0
 			return luckModifier
 		end
-		-- Roll some RNG	
-		local blessedRNG = (math.random() * 11) + luckModifier
-		print("blessed RNG is " .. blessedRNG)
-		local blizzardRNG = (math.random() * 9) + luckModifier
-		print("blizzard RNG is " .. blizzardRNG)
-		local splatRNG = (math.random() * 3) + luckModifier
-		print("splat RNG is " .. splatRNG)
-		local quadRNG = (math.random() * 3) + luckModifier
-		print("split RNG is " .. quadRNG)
+		-- Roll some RNG
+		local blessedRNG = math.random(1, 1100) + luckModifier
+		local blizzardRNG = math.random(1, 900) + luckModifier
 		local player = tear.SpawnerEntity
 		if player ~= nil then
 			player = player:ToPlayer()
-			if blessedRNG >= 11 then
+			if blessedRNG >= 1000 then
 				tear.TearFlags = tear.TearFlags | TearFlags.TEAR_LIGHT_FROM_HEAVEN
 			end
-			if blizzardRNG >= 9 then
+			if blizzardRNG >= 800 then
 				tear.TearFlags = tear.TearFlags | TearFlags.TEAR_ICE
-			end
-			if splatRNG >= 3 then
-				tear.TearFlags = tear.TearFlags | TearFlags.TEAR_BURSTSPLIT
-			end
-			if quadRNG >= 3 then
-				tear.TearFlags = tear.TearFlags | TearFlags.TEAR_QUADSPLIT
 			end
 		end
 	end

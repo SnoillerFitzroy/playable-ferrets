@@ -382,27 +382,20 @@ and color RNG has wider variance.
 
 Wintasm
 
-Holy Light chance reduced: 1/11 (9.09%)
-Freeze chance reduced: 1/9 (11.1%)
-Burst Split chance increased: 1/3 (33.33%)
-Split Chance increased to 100%
+Holy Light chance changed: 1/11 (9.09%)
+Freeze chance changed: 1/9 (11.1%)
+Burst Split chance changed: 100%
+Split Chance removed.
 Intrinsic Tear Effects are now
 influenced by Luck
-
-Added a 1/3 (33.33%) chance for Quad Split
-effect to be applied to Wintasm's tears.
-This means his tears make even more
-sub-projectiles than before.
 
 Starting health is now 3 Bone Hearts
 
 Now starts with 9 Broken Hearts, one
 for each non-winter month of the year.
 
-Wintasm now has a Health Limit of 6 hearts
-Even if he can remove more than three of
-his 9 starting Broken Hearts, he will not
-be able to have more than 6 full hearts.
+Banned Parasite and Cricket's Body from
+showing up in a run for Wintasm.
 
 Astral Projection is now an Innate Item.
 

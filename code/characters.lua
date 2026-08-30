@@ -303,7 +303,7 @@ function MUSTELIDMOD:BloodSoakedFerret(player)
     local game = Game()
 	if game:GetFrameCount() % 2 == 0 then
         local creep = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.PLAYER_CREEP_RED, 0, player.Position, Vector.Zero, player):ToEffect()
-        creep.SpriteScale = Vector(1.2, 1.2)
+        creep.SpriteScale = Vector(1.0, 1.0)
 ---@diagnostic disable-next-line: need-check-nil
         creep:Update() end
 end MUSTELIDMOD:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, MUSTELIDMOD.BloodSoakedFerret)
@@ -422,8 +422,8 @@ function MUSTELIDMOD:sootCoveredFerret(player)
     if player:GetPlayerType() ~= MUSTELIDMOD_CHARACTERS.FIRE then return end
     local game = Game()
 	local sootFrequency = math.random(4, 7)
-	local sootDropX = 0.2 + (math.random() * 0.933)
-	local sootDropY = 0.2 + (math.random() * 0.933)
+	local sootDropX = 0.201 + math.random()
+	local sootDropY = 0.201 + math.random()
 	local ssColor = (math.random() * 0.10196)-0.0225
 	if game:GetFrameCount() % sootFrequency == 0 then
         local creep = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.PLAYER_CREEP_RED, 0, player.Position, Vector.Zero, player):ToEffect()
@@ -468,11 +468,6 @@ MUSTELIDMOD:AddCallback(ModCallbacks.MC_POST_PICKUP_UPDATE, MUSTELIDMOD.BRSprite
 function MUSTELIDMOD:FerretVoidInitialization(player)
 	if player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.VOID then
 		player:SetPocketActiveItem(MUSTELIDMOD_COLLECTIBLES.CESAREAN_SCALPEL, ActiveSlot.SLOT_POCKET, true)
-		player:AddCollectible(CollectibleType.COLLECTIBLE_LIL_PORTAL)
-		player:AddSmeltedTrinket(TrinketType.TRINKET_MYOSOTIS)
-		player:AddSoulHearts(-99) player:AddBlackHearts(-99)
-		player:AddBoneHearts(3) player:AddSoulHearts(1)
-		player:AddCollectibleEffect(CollectibleType.COLLECTIBLE_HOLY_MANTLE, true)
 		voidNoodleHasBRBonus = 0
 		player:AddNullCostume(MUSTELIDMOD_COSTUMES.VOID)
 		player:AddNullCostume(MUSTELIDMOD_COSTUMES.VOID_BODY)
@@ -624,11 +619,8 @@ MUSTELIDMOD:AddCallback(ModCallbacks.MC_POST_PICKUP_UPDATE, MUSTELIDMOD.BRSprite
 
 
 
-
-
 --------------------------------------------------
---------------------------------------------------
---       WINTASM                                                                                         --------------------------------------------------
+--       WINTASM                                                                                         
 --------------------------------------------------
 
 function MUSTELIDMOD:HaloFerretInitialization(player)
@@ -636,6 +628,10 @@ function MUSTELIDMOD:HaloFerretInitialization(player)
 	if player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.HALO then
 		player:SetPocketActiveItem(MUSTELIDMOD_COLLECTIBLES.HALO, ActiveSlot.SLOT_POCKET, true)
 		player:AddNullCostume(MUSTELIDMOD_COSTUMES.HALO)
+		local game = Game()
+		local pool = game:GetItemPool()
+		pool:RemoveCollectible(CollectibleType.COLLECTIBLE_PARASITE)
+		pool:RemoveCollectible(CollectibleType.COLLECTIBLE_CRICKETS_BODY)
 	end
 end
 MUSTELIDMOD:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, MUSTELIDMOD.HaloFerretInitialization)
@@ -668,7 +664,7 @@ local HaloStats = {
 	SSPE = -0.2,
 	SSPEM = 0.5,
     FLY = false,
-    TEARFLAG = TearFlags.TEAR_SPLIT,
+    TEARFLAG = TearFlags.TEAR_BURSTSPLIT,
     TCOLOR = Color(0.25, 0.9, 1, 1.0, 0.7, 0.85, 1)
 }
  
@@ -688,15 +684,26 @@ end
 MUSTELIDMOD:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, MUSTELIDMOD.HaloStats)
 
 
+function MUSTELIDMOD:haloFlags(player, cacheFlag)
+	if player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.HALO then
+		if player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
+				--[[if cacheFlag == CacheFlag.CACHE_TEARFLAG then
+					player.TearFlags = player.TearFlags | TearFlags.TEAR_EXPLOSIVE
+				end]]
+			--[[ if not player:HasCollectible(CollectibleType.COLLECTIBLE_PYROMANIAC) then
+				player:AddCollectible(CollectibleType.COLLECTIBLE_PYROMANIAC) player:AddSmeltedTrinket(32781) player:AddSmeltedTrinket(32781)
+			end ]]
+		elseif not player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
+			-- do something
+		end
+	end
+end
+MUSTELIDMOD:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, MUSTELIDMOD.haloFlags)
 
 
 
---------------------------------------------------
 --------------------------------------------------
 --       TAINTED WINTASM                                                                         --------------------------------------------------
---------------------------------------------------
---------------------------------------------------
-
 
 --[[ function MUSTELIDMOD:HolyFerretInitialization(player)
 	if player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.HOLY then

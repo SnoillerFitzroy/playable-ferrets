@@ -1,6 +1,5 @@
 MUSTELIDMOD = RegisterMod("Mustela", 1)
 local mod = MUSTELIDMOD
-local saveManager = include("helpers.save_manager")
 local json = require("json")
 local saveData = {}
 function MUSTELIDMOD.LoadSaveData()
@@ -237,7 +236,6 @@ else
 		HALO = Isaac.GetPlayerTypeByName("Wintasm", false)             -- Wintasm
 		-- HOLY = Isaac.GetPlayerTypeByName("Wintasm", true)        -- Tainted Wintasm
 }
-	
 	MUSTELIDMOD_COSTUMES = {
 		ICE = Isaac.GetCostumeIdByPath("gfx/characters/ferret_facial.anm2"),
 		SOCKET = Isaac.GetCostumeIdByPath("gfx/characters/gfx_socket.anm2"),
@@ -253,7 +251,6 @@ else
 		HALO = Isaac.GetCostumeIdByPath("gfx/characters/halo.anm2"),
 		FLIGHT_HALO = Isaac.GetCostumeIdByPath("gfx/characters/halo_flight.anm2")
 	}
-	
 	MUSTELIDMOD_COLLECTIBLES = {
 		-- Pocket Actives
 		SATAN_REWARD = Isaac.GetItemIdByName("Satan's Reward"),
@@ -273,36 +270,42 @@ else
 		RODENT = Isaac.GetItemIdByName("A Carnivore's Meal"),
 		MEMORIAL = Isaac.GetItemIdByName("Mischievous Corpse"),
 
-        -- "For Funsies" Passives
+        -- "Other" Passives
 		COMEDY = Isaac.GetItemIdByName("Mask of Comedy"),
 		TRAGEDY = Isaac.GetItemIdByName("Mask of Tragedy"),
 		OGER = Isaac.GetItemIdByName("Oger Mask"),
 	}
-	
 	MUSTELIDMOD_TRINKETS = {
         PAW = Isaac.GetTrinketIdByName("Cat Paw Replica")
     }
-	
+    MUSTELIDMOD_ACHEESEMENTS = {
+        UNLOCK_TAINTED_MUSTELA = Isaac.GetAchievementIdByName("TheExtant"),
+        UNLOCK_TAINTED_SABLEZ = Isaac.GetAchievementIdByName("TheVoidDweller"),
+        UNLOCK_POCKET_ICE = Isaac.GetAchievementIdByName("IcePocket"),
+        UNLOCK_POCKET_SOCKET = Isaac.GetAchievementIdByName("SocketPocket"),
+        UNLOCK_POCKET_VOID = Isaac.GetAchievementIdByName("VoidPocket"),
+        UNLOCK_POCKET_HALO = Isaac.GetAchievementIdByName("HaloPocket"),
+        UNLOCK_FLUOXETINE = Isaac.GetAchievementIdByName("Fluoxetine"),
+        UNLOCK_SOCKETS = Isaac.GetAchievementIdByName("Sockets"),
+        UNLOCK_CORPSE = Isaac.GetAchievementIdByName("Corpse"),
+    }
 	-- Ferret Fetus tears for C-Section
 	MUSTELIDMOD_FERRET_FETUS_TEAR = Isaac.GetEntityVariantByName("Ferret Fetus Tear")
-
     -- All special tearflag-type stuff, including Mustela and T.Sablez's Birthright tear effects, and Wintasm's chance-based tear flags
 	include("code/special_ferret_tears")
-
 	-- EID / POGCHAMP / THE FUTURE compatibility
 	include("code/mod_compatibility")
-	
     -- Items
 	include("code/items")
 	include("code/trinkets")
 	include("code/sablez_moving_box") -- I'm not even gonna fucking TRY to merge this fucker!!! Evil script! EVIL SCRIPT!!!!!
-    
 	-- Character data
 	include("code/characters")
-	
 	-- Kill Scripts aka "icy boy hates fire and lesbian hates Sausage"
 	include("code/ice_dislikes")
 	include("code/fire_dislikes")
 	include("code/socket_dislikes")
 	include("code/void_dislikes")
+    -- Unlock Handler
+    include("code/unlocks")
 end

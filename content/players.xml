@@ -37,8 +37,10 @@
   innatetrinkets="170, 189"
   bSkinParent="Mustela"
   costumeSuffix="socket"
+  modcostume="1301"
   hurtsound="mustelid_injured"
-  deathsound="mustelid_death" />
+  deathsound="mustelid_death"
+  achievement="TheExtant" />
 
 <!-- SABLEZ -->
   <player name="Sablez"
@@ -57,6 +59,7 @@
   innateitems="245, 344"
   innatetrinkets="41"
   costumeSuffix="sable"
+  modcostume="1302"
   hurtsound="mustelid_injured"
   deathsound="mustelid_death" />
 
@@ -65,13 +68,16 @@
   portrait="portrait_void.png"
   skin="character_void.png"
   skinColor="-1"
-  black="2" armor="2" keys="2"
+  bonehearts="3" soulhearts="1"
+  keys="2"
   birthright="Something wrong in you"
-  items="" 
+  innateitems="681" 
+  innatetrinkets="137, 137, 137"
   bSkinParent="Sablez"
   costumeSuffix="void"
   hurtsound="mustelid_injured"
-  deathsound="mustelid_death" />
+  deathsound="mustelid_death"
+  achievement="TheVoidDweller" />
 
 <!-- WINTASM -->
 <player name="Wintasm"
@@ -80,12 +86,12 @@
   skin="character_halo.png"
   skinColor="-1"
   bonehearts="3" brokenhearts="9"
-  healthlimit="12"
   healthtype="4"
   keys="2"
   birthright="Optimistic Blizzard"
   innateitems="677" 
   costumeSuffix="halo"
+  modcostume="1307"
   hurtsound="mustelid_injured"
   deathsound="mustelid_death" />
 </players>
