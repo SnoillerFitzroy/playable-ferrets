@@ -6,13 +6,13 @@
         <sample weight="1" path="deadseascrolls/whoosh.wav"/>
     </sound>
     <sound name="mustelid_injured">
-        <sample weight="1" path="hurt/growl1.wav"/>
-        <sample weight="1" path="hurt/growl2.wav"/>
-        <sample weight="1" path="hurt/growl3.wav"/>
-        <sample weight="1" path="hurt/growl4.wav"/>
+        <sample weight="50" path="hurt/growl1.wav"/>
+        <sample weight="35" path="hurt/growl2.wav"/>
+        <sample weight="40" path="hurt/growl3.wav"/>
+        <sample weight="25" path="hurt/growl4.wav"/>
     </sound>
     <sound name="mustelid_death">
-        <sample weight="1" path="bark.wav"/>
-        <sample weight="1" path="hiss.wav"/>
+        <sample weight="100" path="bark.wav"/>
+        <sample weight="150" path="hiss.wav"/>
     </sound>
 </sounds>

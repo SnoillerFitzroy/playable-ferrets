@@ -133,7 +133,9 @@ function MUSTELIDMOD:iceStats(player, cacheFlag)
 			if player.ShotSpeed > 3 then player.ShotSpeed = 3 end
         end
         if not player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) and cacheFlag == CacheFlag.CACHE_TEARFLAG then
-            player.TearFlags = player.TearFlags | MustelaStats.TEARFLAG end
+            player.TearFlags = player.TearFlags | MustelaStats.TEARFLAG
+		end
+		if player.TearRange < 100 then player.TearRange = 100 end
         if cacheFlag == CacheFlag.CACHE_TEARCOLOR then player.TearColor = MustelaStats.TEARCOLOR end
 		if cacheFlag == CacheFlag.CACHE_LUCK then if player.Luck < 0 then player.Luck = 0 end end
         if cacheFlag == CacheFlag.CACHE_FLYING and MustelaStats.FLYING then player.CanFly = true end
@@ -288,6 +290,7 @@ local SocketStats = {
 function MUSTELIDMOD:taintedStats(player, cacheFlag)
     if player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.SOCKET then
         if cacheFlag == CacheFlag.CACHE_SPEED then player.MoveSpeed = player.MoveSpeed * SocketStats.SPEEDMULTIPLIER end
+		if player.TearRange < 160 then player.TearRange = 160 end
         if not player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) and cacheFlag == CacheFlag.CACHE_TEARFLAG then
 			player.TearFlags = player.TearFlags | SocketStats.TEARFLAG
 		elseif player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) and cacheFlag == CacheFlag.CACHE_TEARFLAG then
@@ -405,6 +408,7 @@ local SableStats = {
 function MUSTELIDMOD:flamingStats(player, cacheFlag)
     if player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.FIRE then
 		if cacheFlag == CacheFlag.CACHE_FIREDELAY then player.MaxFireDelay = (player.MaxFireDelay + 9.4) * SableStats.FIREDELAY end
+		if player.TearRange < 100 then player.TearRange = 100 end
         if cacheFlag == CacheFlag.CACHE_SHOTSPEED then
             player.ShotSpeed = player.ShotSpeed * SableStats.SHOTSPEEDMULTIPLIER
 			if player.ShotSpeed > 5 then player.ShotSpeed = 5 end
@@ -546,30 +550,22 @@ end
 MUSTELIDMOD:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, MUSTELIDMOD.forceVoidAppearance, 0)
 
 -- Stats
-local VoidStats = { 
-    DAMAGE = -2.3,
-	DAMAGEMULTIPLIER = 1.00,
-    SPEED = 0.55,
+local VoidStats = {
 	SPEEDMULTIPLIER = 0.58,
-    SHOTSPEED = 0.0,
+	FIREDELAY = 0.95,
 	SHOTSPEEDMULTIPLIER = 0.5,
-	FDM = 0.95,
-	RANGE = 153,
-    LUCK = -2,
 	FLYING = false,
     TEARCOLOR = Color(0.5, 0.03137, 0.5, 1.0, 0.55, 0.1, 0.53)
 }
 
 function MUSTELIDMOD:statsFromTheVoid(player, cacheFlag)
     if player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.VOID then
-        if cacheFlag == CacheFlag.CACHE_SPEED then player.MoveSpeed = (player.MoveSpeed + VoidStats.SPEED) * VoidStats.SPEEDMULTIPLIER end
-		if cacheFlag == CacheFlag.CACHE_FIREDELAY then player.MaxFireDelay = (player.MaxFireDelay- 0.85) * VoidStats.FDM end
-        if cacheFlag == CacheFlag.CACHE_DAMAGE then player.Damage = (player.Damage + VoidStats.DAMAGE) * VoidStats.DAMAGEMULTIPLIER end
-        if cacheFlag == CacheFlag.CACHE_RANGE then player.TearRange = ((player.TearRange * 0.334) + VoidStats.RANGE) end
+        if cacheFlag == CacheFlag.CACHE_SPEED then player.MoveSpeed = player.MoveSpeed * VoidStats.SPEEDMULTIPLIER end
+		if cacheFlag == CacheFlag.CACHE_FIREDELAY then player.MaxFireDelay = player.MaxFireDelay * VoidStats.FIREDELAY end
+        if cacheFlag == CacheFlag.CACHE_RANGE then player.TearRange = player.TearRange * 0.334 end
 		if player.TearRange < 100 then player.TearRange = 100 end
-        if cacheFlag == CacheFlag.CACHE_SHOTSPEED then player.ShotSpeed = (player.ShotSpeed + VoidStats.SHOTSPEED) * VoidStats.SHOTSPEEDMULTIPLIER end
+        if cacheFlag == CacheFlag.CACHE_SHOTSPEED then player.ShotSpeed = player.ShotSpeed * VoidStats.SHOTSPEEDMULTIPLIER end
         if cacheFlag == CacheFlag.CACHE_TEARCOLOR then player.TearColor = VoidStats.TEARCOLOR end
-		if cacheFlag == CacheFlag.CACHE_LUCK then player.Luck = player.Luck + VoidStats.LUCK end
         if cacheFlag == CacheFlag.CACHE_FLYING and VoidStats.FLYING then player.CanFly = true end
     end
 end
@@ -618,7 +614,6 @@ end
 MUSTELIDMOD:AddCallback(ModCallbacks.MC_POST_PICKUP_UPDATE, MUSTELIDMOD.BRSpriteVoid)
 
 
-
 --------------------------------------------------
 --       WINTASM                                                                                         
 --------------------------------------------------
@@ -632,6 +627,7 @@ function MUSTELIDMOD:HaloFerretInitialization(player)
 		local pool = game:GetItemPool()
 		pool:RemoveCollectible(CollectibleType.COLLECTIBLE_PARASITE)
 		pool:RemoveCollectible(CollectibleType.COLLECTIBLE_CRICKETS_BODY)
+		pool:RemoveCollectible(CollectibleType.COLLECTIBLE_HOLY_MANTLE)
 	end
 end
 MUSTELIDMOD:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, MUSTELIDMOD.HaloFerretInitialization)
@@ -655,13 +651,8 @@ end
 MUSTELIDMOD:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, MUSTELIDMOD.forceHaloAppearance, 0)
 
 local HaloStats = {
-	SPE = -0.1304347826,
 	SPEM = 1.15,
-	TEAR = 1.1,
-	ATK = -0.3,
 	ATKM = 0.5,
-	RANGE = 60,
-	SSPE = -0.2,
 	SSPEM = 0.5,
     FLY = false,
     TEARFLAG = TearFlags.TEAR_BURSTSPLIT,
@@ -671,12 +662,14 @@ local HaloStats = {
 function MUSTELIDMOD:HaloStats(player, cacheFlag)
 	local player = Isaac.GetPlayer()
     if player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.HALO then
-        if cacheFlag == CacheFlag.CACHE_SPEED then player.MoveSpeed = (player.MoveSpeed + HaloStats.SPE) * HaloStats.SPEM end
-		if cacheFlag == CacheFlag.CACHE_FIREDELAY then  player.MaxFireDelay = (player.MaxFireDelay + 2.75 ) * HaloStats.TEAR end
-        if cacheFlag == CacheFlag.CACHE_DAMAGE then player.Damage = (player.Damage + HaloStats.ATK) * HaloStats.ATKM end
-        if cacheFlag == CacheFlag.CACHE_RANGE then player.TearRange = player.TearRange + HaloStats.RANGE end
-        if cacheFlag == CacheFlag.CACHE_SHOTSPEED then player.ShotSpeed = (player.ShotSpeed + HaloStats.SSPE) * HaloStats.SSPEM end
-        if cacheFlag == CacheFlag.CACHE_TEARFLAG then player.TearFlags = player.TearFlags | HaloStats.TEARFLAG  end
+        if cacheFlag == CacheFlag.CACHE_SPEED then player.MoveSpeed = player.MoveSpeed * HaloStats.SPEM end
+        if cacheFlag == CacheFlag.CACHE_DAMAGE then player.Damage = player.Damage * HaloStats.ATKM end
+		if player.TearRange < 100 then player.TearRange = 100 end
+        if cacheFlag == CacheFlag.CACHE_SHOTSPEED then player.ShotSpeed = player.ShotSpeed * HaloStats.SSPEM end
+        if not player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) and cacheFlag == CacheFlag.CACHE_TEARFLAG then
+			player.TearFlags = player.TearFlags | HaloStats.TEARFLAG
+		elseif player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) and cacheFlag == CacheFlag.CACHE_TEARFLAG then
+			player.TearFlags = player.TearFlags | HaloStats.TEARFLAG | TearFlags.TEAR_QUADSPLIT end
         if cacheFlag == CacheFlag.CACHE_TEARCOLOR then player.TearColor = HaloStats.TCOLOR end
         if cacheFlag == CacheFlag.CACHE_FLYING and HaloStats.FLY then player.CanFly = true end
     end
@@ -687,19 +680,14 @@ MUSTELIDMOD:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, MUSTELIDMOD.HaloStats)
 function MUSTELIDMOD:haloFlags(player, cacheFlag)
 	if player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.HALO then
 		if player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
-				--[[if cacheFlag == CacheFlag.CACHE_TEARFLAG then
-					player.TearFlags = player.TearFlags | TearFlags.TEAR_EXPLOSIVE
-				end]]
-			--[[ if not player:HasCollectible(CollectibleType.COLLECTIBLE_PYROMANIAC) then
-				player:AddCollectible(CollectibleType.COLLECTIBLE_PYROMANIAC) player:AddSmeltedTrinket(32781) player:AddSmeltedTrinket(32781)
-			end ]]
-		elseif not player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
-			-- do something
+			if not player:HasCollectible(CollectibleType.COLLECTIBLE_DOGMA) then
+				player:AddInnateCollectible(CollectibleType.COLLECTIBLE_DOGMA)
+				player:AddInnateCollectible(CollectibleType.COLLECTIBLE_HOLY_MANTLE)
+			end
 		end
 	end
 end
 MUSTELIDMOD:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, MUSTELIDMOD.haloFlags)
-
 
 
 --------------------------------------------------

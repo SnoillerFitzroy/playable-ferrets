@@ -1,3 +1,7 @@
 <challenges version="1">
-    <challenge name="Curse of the Ferret?" minshotspeed="true" playertype="Mustela" roomfilter="6,10,13,21" cursefilter="109" endstage="12" megasatan="true" startingitems="458" startingtrinkets="189,170" startingpill="43" />
+    <challenge name="Get Rewarded, Noodle!" unlockachievement="IcePocket" playertype="Mustela"
+    roomfilter="4,6,9,10,11,13,20,21"
+    getcurse="1" cursefilter="92"
+    endstage="12" megasatan="true"
+    startingitems="215,316,448,654,686,692,694" />
 </challenges>

@@ -232,11 +232,21 @@ function MUSTELIDMOD:chillingHaunt(item, player, flag) -- Hibernation
 	local player = Isaac.GetPlayer()
 	if player:HasCollectible(MUSTELIDMOD_COLLECTIBLES.HALO)then
 		if player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.HALO then
-			player:UseActiveItem(CollectibleType.COLLECTIBLE_DULL_RAZOR)
 			player:UseActiveItem(CollectibleType.COLLECTIBLE_WAFER)
+			player:UseActiveItem(CollectibleType.COLLECTIBLE_DULL_RAZOR)
+			player:UseActiveItem(CollectibleType.COLLECTIBLE_SPOON_BENDER)
+			if player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
+				player:SetMinDamageCooldown(300)
+			elseif not player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
+				player:UseActiveItem(CollectibleType.COLLECTIBLE_HOLY_MANTLE)
+				player:SetMinDamageCooldown(180)
+			end
+		elseif not player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.HALO then
+			player:UseActiveItem(CollectibleType.COLLECTIBLE_DULL_RAZOR)
+			player:UseActiveItem(CollectibleType.COLLECTIBLE_SPOON_BENDER)
+			player:UseActiveItem(CollectibleType.COLLECTIBLE_HOLY_MANTLE)
+			player:SetMinDamageCooldown(180)
 		end
-		player:UseActiveItem(CollectibleType.COLLECTIBLE_SPOON_BENDER)
-		player:UseActiveItem(CollectibleType.COLLECTIBLE_HOLY_MANTLE)
 	end
 end
 MUSTELIDMOD:AddCallback(ModCallbacks.MC_USE_ITEM, MUSTELIDMOD.chillingHaunt, MUSTELIDMOD_COLLECTIBLES.HALO)

@@ -32,7 +32,7 @@ if EID then
 	EID:addCollectible(MUSTELIDMOD_COLLECTIBLES.VOIDED_STORAGE_EMPTY, "Acts like Moving Box with a smaller storage limit.#Hurts all enemies in the room, scaling with your attack stat.#The damage counts as burning and crushing.#Full version has no cost to use.#!!!ONLY WORKS FOR SABLEZ!!!")
 	EID:addCollectible(MUSTELIDMOD_COLLECTIBLES.VOIDED_STORAGE_FULL, "The filled form of Voided Storage#Using this in a room that has enemies still hurts them, but less than the empty form does.#!!!This form doesn't require charging!!!#!!!ONLY WORKS FOR SABLEZ!!!")
 	EID:addCollectible(MUSTELIDMOD_COLLECTIBLES.MEMORIAL, "x0.666 Max Fire Delay (50% Tears Up)#Grants a constant line of cyan creep that damages grounded enemies#The creep is *significantly* larger if the player has Dead Cat")
-	EID:addCollectible(MUSTELIDMOD_COLLECTIBLES.HALO, "Grants {{Collectible3}}Homing and a {{Collectible313}}Holy Mantle shield for the current room#!!!If used by Wintasm:#Invokes {{Collectible486}}Dull Razor and {{Collectible108}}The Wafer#Triggers {{Collectible677}}Astral Projection in a hostile room if it hasn't been triggered already")
+	EID:addCollectible(MUSTELIDMOD_COLLECTIBLES.HALO, "Invokes {{Collectible486}}Dull Razor#Grants {{Collectible3}}Homing and a {{Collectible313}}Holy Mantle shield for the current room#!!!If used by Wintasm:#Invokes {{Collectible108}}The Wafer and then {{Collectible486}}Dull Razor#Grants {{Collectible3}}Homing and a {{Collectible313}}Holy Mantle shield for the current room#!!!The fake damage triggers {{Collectible677}}Astral Projection in a hostile room if it hasn't been triggered already")
 end
 
 if TheFuture then

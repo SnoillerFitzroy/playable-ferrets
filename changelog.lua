@@ -273,6 +273,12 @@ actually modifying the start values, and
 is easier to handle for characters
 who will be added in the future.
 
+Mustela, Sablez, Tainted Sablez, and
+Wintasm now have a Range floor of 2.50
+Tainted Mustela has a Range floor of 4.00
+It's fucking rediculous that the base
+game's floor is 1.25. That's fuckin' bullshit.
+
 Changed Character Menu sprites for
 Mustela, Sablez, and Wintasm to be more
 lore-accurate. Mustela has his
@@ -286,24 +292,22 @@ Shot Speed Multiplier was too high
 
 {FSIZE2}Item Changes
 
-Hibernation's effect order
+The effect of Hibernation
 has been changed:
 
-If the current player is Wintasm,
-activate Dull Razor then grant Wafer's
-effects for the current room.
-
-Regardless of if the current player is
-Wintasm, grant the effects of
-Spoon Bender and Holy Mantle for the
-current room.
+Invokes Dull Razor, then grants homing
+and a Holy Mantle shield for the current
+room, and grants 3 seconds of invincibility
+frames (180 frames). Also invokes
+The Wafer before Dull Razor
+if used by Wintasm.
 
 Hibernation now requires 3 charges.
 (up from 2)
 
 Voided Storage has a shorter cooldown.
 
-Cesarean Scalpel has a longer cooldown.
+Cesarean Scalpel has a shorter cooldown.
 
 Extinction Certificate's odds have been
 adjusted so they now actually match what
@@ -407,6 +411,18 @@ Attack: 1.60
 Range: 8.00
 Shot Speed: 0.6
 Luck: 0
+
+Wintasm now has a Birthright effect:
+
+"Unreasonably optimistic..."
+
+Grants innate effects of
+Holy Mantle and Dogma.
+Grants quad-splitting tears.
+Makes Hibernation grant 120 more
+i-frames, for a total of 300 (5 seconds)
+
+This effect is subject to change.
 
 
 {FSIZE2}Known Bugs
