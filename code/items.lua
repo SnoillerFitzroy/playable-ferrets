@@ -109,38 +109,35 @@ function MUSTELIDMOD:selfHarm(item, player) -- Cesarean Scalpel
     local player = Isaac.GetPlayer()
 	player:UseActiveItem(CollectibleType.COLLECTIBLE_VENTRICLE_RAZOR, false)
 	local game = Game()
-	local sfxManager = SFXManager()
-	local sDamage = math.random(2)
-	local sDistort = math.random(8)
-	local mindFuckDuration = math.random(127) + 64
+	local sDistort = math.random(1, 8)
+	local mindFuckDuration = math.random(64, 200)
 	-- Tainted Sablez
 	if player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.VOID then
 		game:ShowHallucination(((mindFuckDuration +  math.random(160)) - 32) , BackdropType.DARK_CLOSET)
 		if player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
 			MUSTELIDMOD:selfHarmSafely()
 			MUSTELIDMOD:voidReward()
-			if sDistort == 8 then
+			if sDistort == 1 then
 				MUSTELIDMOD:spaceDistortion()
-				player:UseActiveItem(CollectibleType.COLLECTIBLE_TAMMYS_HEAD)
+			elseif sDistort > 6 then
 				player:UseActiveItem(CollectibleType.COLLECTIBLE_KAMIKAZE, false, false, true, false, -1)
 			end
 		else
-			if sDamage < 2 then
+			local sDamage = math.random(1, 3)
+			if sDamage < 3 then
 				MUSTELIDMOD:selfHarmSafely()
 			else
 				MUSTELIDMOD:selfHarmDamage()
-				player:UseActiveItem(CollectibleType.COLLECTIBLE_TAMMYS_HEAD)
-			end
-			if sDistort > 6 then
-				player:UseActiveItem(CollectibleType.COLLECTIBLE_TAMMYS_HEAD)
-				player:UseActiveItem(CollectibleType.COLLECTIBLE_KAMIKAZE, false, false, true, false, -1)
 			end
 			MUSTELIDMOD:voidReward()
 		end
 	else -- Not Tainted Sablez
 		game:ShowHallucination( (mindFuckDuration - 48), BackdropType.DARK_CLOSET)
-		MUSTELIDMOD:selfHarmSafely() player:UseActiveItem(CollectibleType.COLLECTIBLE_KAMIKAZE, false, false, true, false, -1)
-		if sDistort == 1 then MUSTELIDMOD:spaceDistortion() end
+		MUSTELIDMOD:selfHarmSafely()
+		player:UseActiveItem(CollectibleType.COLLECTIBLE_KAMIKAZE, false, false, true, false, -1)
+		if sDistort == 1 then
+			MUSTELIDMOD:spaceDistortion()
+		end
 	end
 	return { Discharge = true, Remove = false, ShowAnim = true }
 end
@@ -234,22 +231,23 @@ function MUSTELIDMOD:chillingHaunt(item, player, flag) -- Hibernation
 		if player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.HALO then
 			player:UseActiveItem(CollectibleType.COLLECTIBLE_WAFER)
 			player:UseActiveItem(CollectibleType.COLLECTIBLE_DULL_RAZOR)
-			player:UseActiveItem(CollectibleType.COLLECTIBLE_SPOON_BENDER)
+			player:UseActiveItem(CollectibleType.COLLECTIBLE_SPOON_BENDER, UseFlag.USE_NOCOSTUME)
 			if player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
 				player:SetMinDamageCooldown(300)
 			elseif not player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
-				player:UseActiveItem(CollectibleType.COLLECTIBLE_HOLY_MANTLE)
+				player:UseActiveItem(CollectibleType.COLLECTIBLE_DEAD_DOVE, UseFlag.USE_NOCOSTUME)
 				player:SetMinDamageCooldown(180)
 			end
 		elseif not player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.HALO then
 			player:UseActiveItem(CollectibleType.COLLECTIBLE_DULL_RAZOR)
-			player:UseActiveItem(CollectibleType.COLLECTIBLE_SPOON_BENDER)
+			player:UseActiveItem(CollectibleType.COLLECTIBLE_SPOON_BENDER, UseFlag.USE_NOCOSTUME)
 			player:UseActiveItem(CollectibleType.COLLECTIBLE_HOLY_MANTLE)
 			player:SetMinDamageCooldown(180)
 		end
 	end
 end
 MUSTELIDMOD:AddCallback(ModCallbacks.MC_USE_ITEM, MUSTELIDMOD.chillingHaunt, MUSTELIDMOD_COLLECTIBLES.HALO)
+MUSTELIDMOD:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, MUSTELIDMOD.chillingHaunt, MUSTELIDMOD_COLLECTIBLES.HALO)
 
 function MUSTELIDMOD:rollTimeTravel(item, player, flag) -- Frantic Wormhole
 	local player = Isaac.GetPlayer()
@@ -320,26 +318,29 @@ end
 function MUSTELIDMOD:selfHarmSafely(player) -- Fake damage from Cesarean Scalpel
 	local player = Isaac.GetPlayer()
 	player:TakeDamage(1, DamageFlag.DAMAGE_FAKE, EntityRef(player), 0)
+	player:UseActiveItem(CollectibleType.COLLECTIBLE_TAMMYS_HEAD)
 end
 
 function MUSTELIDMOD:selfHarmDamage(player) -- Real Damage from Cesarean Scalpel
 	local player = Isaac.GetPlayer()
 	player:TakeDamage(1, DamageFlag.DAMAGE_NO_PENALTIES | DamageFlag.DAMAGE_NO_MODIFIERS | DamageFlag.DAMAGE_NOKILL, EntityRef(player), 0)
+	player:SetMinDamageCooldown(180)
+	player:UseActiveItem(CollectibleType.COLLECTIBLE_TAMMYS_HEAD)
+	player:UseActiveItem(CollectibleType.COLLECTIBLE_KAMIKAZE, false, false, true, false, -1)
 end
 
 function MUSTELIDMOD:spaceDistortion(player) -- Rare effect from Cesarean Scalpel when Tainted Sablez has Birthright
     local player = Isaac.GetPlayer()
-	local sfxManager = SFXManager()
 	SFXManager():Play(SoundEffect.SOUND_DOGMA_BLACKHOLE_CLOSE, 2.5, 0, false, 1)
-	local x = math.random(17)
-	if x > 6 then player:UseActiveItem(CollectibleType.COLLECTIBLE_DIPLOPIA, false) end
-	if x < 12 then Isaac.Spawn(5, 300, 49, player.Position, Vector.Zero, nil) end
+	local x = math.random(1, 30)
+	if x > 10 then player:UseActiveItem(CollectibleType.COLLECTIBLE_DIPLOPIA, false) end
+	if x < 20 then Isaac.Spawn(5, 300, 49, player.Position, Vector.Zero, nil) end
 end
 
 function MUSTELIDMOD:voidReward() -- Chance for Tainted Sablez to summon a consumable
-	local spawner = math.random(7)
 	local player = Isaac.GetPlayer()
-	if spawner == 7 then
+	local spawner = math.random(16)
+	if spawner == 1 then
 		local voidNoodleDropSubType = math.random(#VoidNoodleSpawnables)
 		Isaac.Spawn(5, 300, VoidNoodleSpawnables[voidNoodleDropSubType], player.Position, Vector.Zero, nil)
 	end

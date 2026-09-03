@@ -299,15 +299,17 @@ Invokes Dull Razor, then grants homing
 and a Holy Mantle shield for the current
 room, and grants 3 seconds of invincibility
 frames (180 frames). Also invokes
-The Wafer before Dull Razor
+The Wafer before Dull Razor,
 if used by Wintasm.
 
-Hibernation now requires 3 charges.
-(up from 2)
+Hibernation now has a Timed charge,
+with a 10 second cooldown.
 
 Voided Storage has a shorter cooldown.
 
 Cesarean Scalpel has a shorter cooldown.
+Cesarean Scalpel's consumable spawns
+occur less than half as often.
 
 Extinction Certificate's odds have been
 adjusted so they now actually match what

@@ -274,9 +274,18 @@ local occultEnabled = 0
 function MUSTELIDMOD:forceOccultAppearance(player)
 	if player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.SOCKET then
 		if occultEnabled == 0 then
-			if player.CanFly then player:AddNullCostume(MUSTELIDMOD_COSTUMES.FLIGHT_SOCKET) occultEnabled = 1 end end
+			if player.CanFly then
+				player:AddNullCostume(MUSTELIDMOD_COSTUMES.FLIGHT_SOCKET)
+				occultEnabled = 1
+			end
+		end
 		if occultEnabled == 1 then
-			if not player.CanFly then player:TryRemoveNullCostume(MUSTELIDMOD_COSTUMES.FLIGHT_SOCKET) occultEnabled = 0 end end end
+			if not player.CanFly then
+				player:TryRemoveNullCostume(MUSTELIDMOD_COSTUMES.FLIGHT_SOCKET)
+				occultEnabled = 0
+			end
+		end
+	end
 end
 MUSTELIDMOD:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, MUSTELIDMOD.forceOccultAppearance, 0)
 
@@ -637,13 +646,17 @@ local stormEnabled = 0
 
 function MUSTELIDMOD:forceHaloAppearance(player)
 	if player:GetPlayerType() == MUSTELIDMOD_CHARACTERS.HALO then
-		if stormEnabled == 0 and player.CanFly == true then
-			player:AddNullCostume(MUSTELIDMOD_COSTUMES.FLIGHT_HALO)
-			stormEnabled = 1
+		if stormEnabled == 0 then
+			if player.CanFly == true then
+				player:AddNullCostume(MUSTELIDMOD_COSTUMES.FLIGHT_HALO)
+				stormEnabled = 1
+			end
 		end
-		if stormEnabled == 1 and player.CanFly == false then
-			player:TryRemoveNullCostume(MUSTELIDMOD_COSTUMES.FLIGHT_HALO)
-			stormEnabled = 0
+		if stormEnabled == 1 then
+			if player.CanFly == false then
+				player:TryRemoveNullCostume(MUSTELIDMOD_COSTUMES.FLIGHT_HALO)
+				stormEnabled = 0
+			end
 		end
 	end
 end

@@ -34,10 +34,10 @@ function MUSTELIDMOD:pissOffPalkia(tear, player, cacheFlag) -- Tainted Sablez Bi
 		local player = tear.SpawnerEntity
 		if player ~= nil then
 			player = player:ToPlayer()
-			if spaceDestabilization <= 260 then
+			if spaceDestabilization <= 256 then
 				tear.TearFlags = tear.TearFlags | TearFlags.TEAR_ATTRACTOR -- A random chance for having Attractor tears
 			end
-			if spaceDistortion < 205 then
+			if spaceDistortion <= 256 then
 				tear.TearFlags = tear.TearFlags | TearFlags.TEAR_RIFT -- A different chance for having Rift tears
 			end
 			if tear.Variant ~= MUSTELIDMOD_FERRET_FETUS_TEAR then

@@ -11,7 +11,7 @@
   <costume anm2path="void_body.anm2" id="1306" type="none" priority="99999"/> 
   <costume anm2path="void_flight.anm2" type="none" priority="99999" isFlying="true"/>
   <costume anm2path="halo.anm2" id="1307" type="none" priority="99999"/>
-  <costume anm2path="halo_flight.anm2" type="none" priority="99999"/>
+  <costume anm2path="halo_flight.anm2" type="none" priority="99999" isFlying="true"/>
   <costume anm2path="youarenolongerdepressed.anm2" id="1308" type="passive" priority="128"/>
   <costume anm2path="tainted_eyes.anm2" id="1309" type="passive" priority="128"/>
   <costume anm2path="icepog.anm2" type="none" priority="999"/>

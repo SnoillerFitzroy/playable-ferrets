@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <name>[RGON+] Playable Ferrets</name>
-  <directory>!!!mustela</directory>
-  <id>2987125567</id>
-  <description>[h1]This mod [b]requires REPENTOGON[/b] to work![/h1]
+    <name>[RGON+] Playable Ferrets</name>
+    <directory>!!!mustela</directory>
+    <id>2987125567</id>
+    <description>[h1]This mod [b]requires REPENTOGON[/b] to work![/h1]
 The rest of the dependencies aren't required for this mod to function, but they make the gameplay with Playable Ferrets look and/or feel a lot nicer, so I'd highly recommend installing those as well.
 [hr][/hr]
 [h1]Ferrets in Isaac![/h1]
@@ -31,10 +31,10 @@ Catinsurance: Up-to-date tutorials on YouTube that made developing this signific
 Isaac Blueprints: Necessary info about setting up the unlock system.
 Official TBoI Discord: Lots of advice on really specific things, too many people to list.
   </description>
-  <version>2.2.1</version>
-  <visibility>Public</visibility>
-  <tag id="Lua" />
-  <tag id="Items" />
-  <tag id="Active Items" />
-  <tag id="Player Characters" />
+    <version>2.2.2</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Items"/>
+    <tag id="Active Items"/>
+    <tag id="Player Characters"/>
 </metadata>
